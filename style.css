@@ -1,0 +1,119 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:grey
+}
+
+.menu {
+    min-width: 300px;
+    min-height: 300px;
+    background-color: white;
+    color:grey;
+    position:absolute;
+    left:-300px;
+    transition:all 1s;
+    top: 0px;
+    z-index: -1;
+}
+
+input {
+    opacity: 0;
+    height: 30px;
+    width: 30px;
+    z-index:1;
+    position: fixed;
+    position: absolute;
+    top:20px;
+    left:20px;
+    cursor: pointer;
+}
+
+span {
+    height: 3px;
+    width: 30px;
+    background-color:white;
+    display: block;
+    margin-top: 0px;
+    position: absolute;
+    top:20px;
+    left:20px;
+    transition: all 0.5s;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+span:after {
+    content: '';
+    display:block;
+    height: 3px;
+    width: 30px;
+    background-color:white;
+    margin: -9px 0;
+    position: fixed;
+    transition: all 0.5s;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+span:before {
+    content: '';
+    display:block;
+    height: 3px;
+    width: 30px;
+    background-color:white;
+    margin: 9px 0;
+    position: fixed;
+    transition: all 0.5s;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    margin-top: 70px;
+    margin-left: 20px;
+    font-family: sans-serif;
+}
+
+li {
+    cursor: pointer;
+    line-height: 30px;
+}
+
+li:hover {
+    opacity: 0.8;
+}
+
+input[type="checkbox"]:checked ~ .menu {
+    position:absolute;
+    left:0;
+    transition:all 1s;
+}
+
+input[type="checkbox"]:checked ~ span {
+    background-color:grey; 
+    position: relative;    
+}
+
+input[type="checkbox"]:checked ~ span:before,
+input[type="checkbox"]:checked ~ span:after {
+    background-color:grey;
+}
+
+input[type="checkbox"]:checked ~ span:before {
+    transform:rotate(45deg);
+    width:15px;
+    top: 15px;
+    left:16px;
+}
+
+input[type="checkbox"]:checked ~ span:after {
+    transform:rotate(-45deg);
+    width:15px;
+    top: 24px;
+    left:16px;
+}
